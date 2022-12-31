@@ -18,7 +18,7 @@ function Header() {
             <a href="#about-us">About us</a>
           </li>
           <li className="nav-link">
-            <a href="#dot3">Products</a>
+            <a href="#products">Products</a>
           </li>
         </ul>
       </nav>

@@ -10,7 +10,7 @@
 .products {
   background-color: blue;
   width: 400px;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 2rem;
   transition: 1000ms;
 }
@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 .description-products {
@@ -32,18 +32,21 @@
   line-height: 2;
   list-style-type: disc;
   list-style-position: inside;
-  font-size: 2.5rem;
+  font-size: 1rem;
 }
 
 @media (max-width: 600px) {
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
-  .header-products {
+  h3 {
     font-size: 2rem;
   }
   .description-products {
-    font-size: 1.5rem;
+    font-size: 1rem;
+  }
+  .products .header-products {
+    width: 300px;
   }
 }
 

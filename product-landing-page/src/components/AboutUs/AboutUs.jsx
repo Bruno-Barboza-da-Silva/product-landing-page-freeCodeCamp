@@ -6,8 +6,10 @@ import lamp from "../../images/lamp.svg";
 function AboutUs() {
   return (
     <section >
-      <div id="dot2">.</div>
-      <h2 id="about-us">About us</h2>
+      <h2 id="about-us">
+        <br />
+        About us
+        </h2>
       <div id="policy">
         <div className="benefits">
           <div className="header-benefits">
@@ -23,11 +25,10 @@ function AboutUs() {
             Our team does its best to provide your access in less than 10 hours
           </p>
         </div>
-        <div id="dot3">.</div>
         <div className="benefits">
           <div className="header-benefits">
             <img id="quick-service" src={quality} alt="" className="icon" />
-            <h3>Satisfaction Guaranteed</h3>
+            <h3>Satisfaction</h3>
           </div>
           <p>
             If you don't like the product within 30 days, you will get all your

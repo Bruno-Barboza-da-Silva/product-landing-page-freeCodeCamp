@@ -6,7 +6,10 @@ import "./products.css";
 function Products() {
   return (
     <section id="products">
-      <h2>Our products</h2>
+      <h2>
+        <br />
+        Our products
+      </h2>
       <div id="commercial">
         <div className="products">
           <div className="header-products">
