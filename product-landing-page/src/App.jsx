@@ -4,13 +4,14 @@ import { useState } from "react"
 import './App.css'
 import Home from "./pages/Home";
 import Form from "./pages/form"
+import Send from "./pages/send"
 
 export default function App() {
   return (
       <Routes>
           <Route path='/' element={<Home/>} />
-          <Route path="/teste" element={<h1>Teste</h1>} />
-          <Route path="/sign-up" element={<Form/>} />
+          <Route path="/send" element={<Send/>} />
+          <Route path="/sign-up" element={<Form/>}/>
           <Route path="*" element={<NoMatch />} />
       </Routes>
   );
