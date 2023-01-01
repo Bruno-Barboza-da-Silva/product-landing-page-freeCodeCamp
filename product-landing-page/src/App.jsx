@@ -11,7 +11,7 @@ export default function App() {
       <Routes>
           <Route path='/' element={<Home/>} />
           <Route path="/send" element={<Send/>} />
-          <Route path="/sign-up" element={<Form/>}/>
+          <Route path="/contact-us" element={<Form/>}/>
           <Route path="*" element={<NoMatch />} />
       </Routes>
   );

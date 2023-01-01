@@ -12,7 +12,7 @@ function Header() {
       <nav id="nav-bar">
         <ul id="ul-nav">
           <li className="nav-link">
-            <Link to="/sign-up">Sign up</Link>
+            <Link to="/contact-us">Contact us</Link>
           </li>
           <li className="nav-link">
             <a href="#about-us">About us</a>

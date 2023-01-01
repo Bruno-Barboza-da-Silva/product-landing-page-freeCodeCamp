@@ -2,7 +2,7 @@ import "./footer.css";
 
 function Footer() {
   return (
-    <div id="contact">
+    <footer id="contact">
       <p>This is a site made by Bruno Barboza.</p>
       <div>
         <div id="links">
@@ -48,7 +48,7 @@ function Footer() {
         </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 export default Footer;
