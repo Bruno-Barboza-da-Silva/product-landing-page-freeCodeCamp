@@ -5,6 +5,7 @@ import './App.css'
 import Home from "./pages/Home";
 import Form from "./pages/form"
 import Send from "./pages/send"
+import Error from "./pages/error"
 
 export default function App() {
   return (
@@ -12,17 +13,11 @@ export default function App() {
           <Route path='/' element={<Home/>} />
           <Route path="/send" element={<Send/>} />
           <Route path="/contact-us" element={<Form/>}/>
-          <Route path="*" element={<NoMatch />} />
+          <Route path="*" element={<Error />} />
       </Routes>
   );
 }
 
 
-function NoMatch() {
-  return (
-    <div>
-      <h2>Nothing to see here!</h2>
-    </div>
-  );
-}
+
 
