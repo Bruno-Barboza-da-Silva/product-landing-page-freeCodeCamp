@@ -4,34 +4,33 @@ import React,{useState, useEffect} from "react";
 import axios from 'axios'
 
 function Api() {
-  const [frase, setFrase] = useState("")
+  const [frase, setFrase] = useState()
   useEffect(()=>{
-    axios.get('http://localhost:5000/api/').then(res=>{
-      console.log(res.data.titulo)
-      setFrase(res.data.titulo)});
+    axios.get('http://localhost:5000/api/').then((res)=>{
+      setFrase(res.data.titulo)}).then(console.log("get")).catch();
   }, [])
 
-const [nome, setNome] = useState("")
+  // problema: axios duplicando no get
+// const [nome, setNome] = useState("")
 
-function post () {
-  axios.post('http://localhost:5000/api/',{
-    'titulo':{nome}
-}).then(console.log(nome))
+// const post = () => {
+//   axios.post('http://localhost:5000/api/',{
+//     'titulo':'post'
+// }).then(console.log('post'))  
+//   }
 
 
 
-    
-  }
   return (
     <div id="api">
         <h1>Hello</h1>
         <h2>{frase}</h2>
-        <form >
+        {/* <form >
           <input type="text" value={nome} onChange={(e)=>setNome(e.target.value)}/>
         <button type="submit" onSubmit={post()}></button>
-        </form>
+        </form> */}
     </div>
   );
-}
+};
 
 export default Api;

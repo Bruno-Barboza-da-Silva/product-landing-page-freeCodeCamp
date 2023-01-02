@@ -11,12 +11,9 @@ const app = express()
 app.use(express.json());
 app.use(cors())
 
-const json = [{
-    'titulo':'Uma notícia'
-}]
 
 app.get('/api', (req, res) => {
-    res.json(json)
+    res.json({'titulo':'Uma notícia'})
 })
 
 app.post('/api', (req, res) => {
