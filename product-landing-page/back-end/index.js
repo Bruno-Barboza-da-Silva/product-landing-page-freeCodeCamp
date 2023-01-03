@@ -12,15 +12,15 @@ app.use(express.json());
 app.use(cors())
 
 
+let json = []
+
 app.get('/api', (req, res) => {
-    res.json({'titulo':'Uma notícia'})
+    res.json(json[0])
 })
 
 app.post('/api', (req, res) => {
-    console.log(req.body)
+    console.log(req.body.titulo)
     json.push(req.body)
-
-
 })
 
 
