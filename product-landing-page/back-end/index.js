@@ -15,13 +15,21 @@ app.use(cors())
 let json = []
 
 app.get('/api', (req, res) => {
-    res.json(json[0])
+    res.json(json[json.length-1])
 })
+
+
 
 app.post('/api', (req, res) => {
     console.log(req.body)
     json.push(req.body)
+    
 })
+
+app.get('/api-full', (req, res) => {
+    res.json(json)
+})
+
 
 
 app.listen(5000, ()=>{
