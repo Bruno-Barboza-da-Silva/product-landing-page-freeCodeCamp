@@ -19,7 +19,7 @@ app.get('/api', (req, res) => {
 })
 
 app.post('/api', (req, res) => {
-    console.log(req.body.titulo)
+    console.log(req.body)
     json.push(req.body)
 })
 

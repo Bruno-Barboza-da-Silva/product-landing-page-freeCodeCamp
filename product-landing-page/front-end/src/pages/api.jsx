@@ -7,41 +7,47 @@ function Api() {
   const [frase, setFrase] = useState()
   useEffect(()=>{
     axios.get('http://localhost:5000/api/').then((res)=>{
-      setFrase(res.data.titulo)}).then(console.log("get")).catch();
+      setFrase(res.data.nome)}).then(console.log("get")).catch();
   }, [])
-
-// const [nome, setNome] = useState("")
 
 const [titulo, setName] = useState()
 
 function changeName(ev) {
-  const valor = ev.target.value ;
-  setName(valor)
+  setName(ev.target.value)
 }
 
+const [email, setEmail] = useState()
+
+function changeEmail(ev) {
+  setEmail(ev.target.value)
+}
+
+
+
+
 const post = () => {
-  axios.post('http://localhost:5000/api/',
-    {titulo}
+  axios.post('http://localhost:5000/api/',{
+    "nome": titulo,
+    "email": email
+  }
+    
 ,).then(console.log('post'))  
   }
-
-// novo codigo
-// const [values, setValues] = useState(null)
-// function onChange(ev) {
-//   const {value} = ev.target
-//   setValues({... values, [name]:value}) 
-// }
-
 
   return (
     <div id="api">
         <h1>Hello</h1>
-        <h2>{frase ? frase : 'Sem frase'}</h2>
+        <h2>Obrigado {frase ? frase : 'Sem frase'}!</h2>
         <form onSubmit={post}>
           {/* novo codigo */}
-          {/* <input type="text" name="title" onChange={onChange}/> */}
-          <input type="text" onChange={changeName}/>
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" onChange={changeName}/>
+          <input type="email" id="email" onChange={changeEmail}/>
+          <input type="radio" id="begginer" description="Begginer " name="product"/>
+          <input type="radio" id="advanced" description="Advanced " name="product"/>
+          <input type="radio" id="wizzard" description="Wizzard " name="product"/>
           {/* novo codigo */}
+
         <button type="submit"></button>
         </form>
     </div>
