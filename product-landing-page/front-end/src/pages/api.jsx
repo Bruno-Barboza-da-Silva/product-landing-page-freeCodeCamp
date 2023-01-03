@@ -22,13 +22,19 @@ function changeEmail(ev) {
   setEmail(ev.target.value)
 }
 
+const [product, setProduct] = useState()
+
+function changeProduct(ev) {
+  setProduct(ev.target.value)
+}
 
 
 
 const post = () => {
   axios.post('http://localhost:5000/api/',{
     "nome": titulo,
-    "email": email
+    "email": email,
+    "produto": product
   }
     
 ,).then(console.log('post'))  
@@ -43,10 +49,9 @@ const post = () => {
           <label htmlFor="name">Name</label>
           <input type="text" id="name" onChange={changeName}/>
           <input type="email" id="email" onChange={changeEmail}/>
-          <input type="radio" id="begginer" description="Begginer " name="product"/>
-          <input type="radio" id="advanced" description="Advanced " name="product"/>
-          <input type="radio" id="wizzard" description="Wizzard " name="product"/>
-          {/* novo codigo */}
+          <input type="radio" id="begginer" description="Begginer " name="product" value="begginer"  onChange={changeProduct}/>
+          <input type="radio" id="advanced" description="Advanced " name="product" value="advanced"  onChange={changeProduct}/>
+          <input type="radio" id="wizzard" description="Wizzard " name="product" value="wizzard"  onChange={changeProduct}/>
 
         <button type="submit"></button>
         </form>
