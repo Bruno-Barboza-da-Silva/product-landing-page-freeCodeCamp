@@ -2,31 +2,56 @@ import Footer from "../components/Footer/Footer";
 import "./form.css";
 import Input from "../components/inputs/inputs";
 import axios from 'axios'
+import React,{useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
 function Form() {
-  axios.post('https://api.aluroni.com.br/pratos', {
-    nome: 'Lasanha',
-    descricao: 'O jantar mais gostoso do mundo inteirinho!'
-})
-  .then(function () {console.log("ok")
-    // se tudo der certo, o prato vai ser criado!
-  })
+  const navigate = useNavigate();
+  const [titulo, setName] = useState()
 
+  function changeName(ev) {
+    setName(ev.target.value)
+  }
+  
+  
+  const [email, setEmail] = useState()
+  function changeName (ev) {
+        setName(ev.target.value)
+      }
+  
+  function changeEmail(ev) {
+    setEmail(ev.target.value)
+  }
+  
+  const [product, setProduct] = useState()
+  
+  function changeProduct(ev) {
+    setProduct(ev.target.value)
+  }
+  
+  const post = () => {
+    axios.post('http://localhost:5000/contact-us/',{
+      "nome": titulo,
+      "email": email,
+      "produto": product
+    },)
+    .then(navigate("/send"))
+    }
     return (
       <div id="page">
-        <form id="form"   >
+        <form id="form" onSubmit={post} >
         <h1 id="h1-form">Contact Us!</h1>
-        <Input type="email" id="email" description="E-mail: " placeholder="Insert your e-mail" name="email"/>
-        <Input type="text" id="name" description="Name: " placeholder="Insert your name" name="name"/>
+        <Input type="text" id="name" description="Name: " placeholder="Insert your name" name="name" funcao={changeName}/>
+          <Input type="email" id="email" description="E-mail: " placeholder="Insert your e-mail" name="email" funcao={changeEmail}/>
         <h2 id="h2-form">
           Whitch one is your favorite?
         </h2>
         <div id="radios">
-        <Input type="radio" id="begginer" description="Begginer " name="product"/>
-        <Input type="radio" id="advanced" description="Advanced " name="product"/>
-        <Input type="radio" id="wizzard" description="Wizzard " name="product"/>
+        <Input type="radio" id="begginer" description="Begginer " name="product" valueRadio="begginer"  funcao={changeProduct}/>
+          <Input type="radio" id="advanced" description="Advanced " name="product" valueRadio="advanced"  funcao={changeProduct}/>
+          <Input type="radio" id="wizzard" description="Wizzard " name="product" valueRadio="wizzard"  funcao={changeProduct}/>
         </div>
         <button type="submit" id="button-form">Send!</button>
       </form>

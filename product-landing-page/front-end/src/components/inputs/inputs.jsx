@@ -1,7 +1,11 @@
 import "./inputs.css"
+import React,{useState, useEffect} from "react";
+import '../../pages/form'
 
-function Input({type, id, description, placeholder, name}) {
+function Input({type, id, description, placeholder, name, valueRadio, funcao}) {
+
   return (
+
     <div>
       <label htmlFor={id}>{description}</label>
       <input
@@ -9,7 +13,9 @@ function Input({type, id, description, placeholder, name}) {
         id={id}
         required
         name={name}
-        placeholder={placeholder}
+        key={name}
+        value={valueRadio}
+        onChange={(ev) => funcao(ev)}
       />   
     </div>
   );

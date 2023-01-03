@@ -14,24 +14,21 @@ app.use(cors())
 
 let json = []
 
-app.get('/api', (req, res) => {
-    res.json(json[json.length-1])
+app.get('/all-clients', (req, res) => {
+    res.json(json)
 })
 
-
-
-app.post('/api', (req, res) => {
+app.post('/contact-us', (req, res) => {
     console.log(req.body)
     json.push(req.body)
     
 })
 
-app.get('/api-full', (req, res) => {
-    res.json(json)
+app.get('/contact-us', (req, res) => {
+    res.json(json[json.length-1])
 })
 
 
-
 app.listen(5000, ()=>{
-    console.log("aplicação rodando")
+    console.log("aplicação rodando na porta 5000")
 })
