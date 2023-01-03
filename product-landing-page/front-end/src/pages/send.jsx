@@ -5,7 +5,7 @@ import axios from 'axios'
 
 
 function Send() {
-  const [frase, setFrase] = useState()
+  const [frase, setFrase] = useState([])
   useEffect(()=>{
      axios.get('http://localhost:5000/contact-us/').then((res)=>{
       setFrase(res.data.nome)});
