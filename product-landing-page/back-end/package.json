@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "execute:migration": "npx sequelize-cli db:migrate",
+    "undo:migration": "npx sequelize-cli db:migrate:undo",
+    "execute:seeder": "npx sequelize-cli db:seed:all",
+    "undo:seeder": "npx sequelize-cli db:seed:undo"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "express-session": "^1.17.3",
