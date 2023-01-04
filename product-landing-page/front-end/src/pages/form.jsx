@@ -33,9 +33,9 @@ function Form() {
   
   const post = () => {
     axios.post('http://localhost:5000/contact-us/',{
-      "nome": titulo,
+      "name": titulo,
       "email": email,
-      "produto": product
+      "produt": product
     },)
     .then(navigate("/send"))
     }
