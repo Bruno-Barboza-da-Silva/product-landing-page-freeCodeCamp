@@ -35,7 +35,7 @@ function Form() {
     axios.post('http://localhost:5000/contact-us/',{
       "name": titulo,
       "email": email,
-      "produt": product
+      "product": product
     },)
     .then(navigate("/send"))
     }
