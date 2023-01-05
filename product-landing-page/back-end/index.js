@@ -8,6 +8,7 @@ const cors = require('cors')
 // import path from 'path' 
 const app = express();
 const contactRouter = require('./routes/contactUs.router')
+const sendRouter = require("./routes/send.router")
 
 
 
@@ -27,12 +28,12 @@ app.get('/all-clients', (req, res) => {
     
 // })
 
-app.get('/contact-us', (req, res) => {
-    res.json(json[json.length-1])
-})
+
 
 
 app.use("/contact-us", contactRouter);
+
+app.use("/send", sendRouter);
 
 
 app.listen(5000, ()=>{

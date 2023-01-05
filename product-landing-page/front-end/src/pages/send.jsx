@@ -7,8 +7,9 @@ import axios from 'axios'
 function Send() {
   const [frase, setFrase] = useState([])
   useEffect(()=>{
-     axios.get('http://localhost:5000/contact-us/').then((res)=>{
-      setFrase(res.data.name)});
+     axios.get('http://localhost:5000/send/').then((res)=>{
+      // console.log(res.data[0].name)
+      setFrase(res.data[0].name)});
   }, [frase])
 
     return (
