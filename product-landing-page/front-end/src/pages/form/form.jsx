@@ -1,6 +1,6 @@
-import Footer from "../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import "./form.css";
-import Input from "../components/inputs/inputs";
+import Input from "../../components/inputs/inputs";
 import axios from 'axios'
 import React,{useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";

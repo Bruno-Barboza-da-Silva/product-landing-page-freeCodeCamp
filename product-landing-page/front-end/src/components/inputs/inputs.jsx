@@ -1,6 +1,6 @@
 import "./inputs.css"
 import React,{useState, useEffect} from "react";
-import '../../pages/form'
+import '../../pages/form/form'
 
 function Input({type, id, description, placeholder, name, valueRadio, funcao}) {
 
