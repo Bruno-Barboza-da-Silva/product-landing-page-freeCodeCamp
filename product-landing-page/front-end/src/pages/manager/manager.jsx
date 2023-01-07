@@ -21,18 +21,6 @@ function Manager() {
     axios.delete(`http://localhost:5000/manager/${number}`).then(window.location.reload())
   }
 
-
-
-
- 
-  // const destroy = (number) => {
-  //   // const number = number
-  //   axios.delete(`http://localhost:5000/manager/${number}`)
-  //   .then(navigate("/manager"))
-  //   }
-
-
-
   return (
     <div className="manager">
       <Link to="/contact-us">
@@ -56,11 +44,11 @@ function Manager() {
             <div>{item.updatedAt}</div>
             <div className="buttons-manager">              
               <button id={item.id} onClick={(ev) => destroy(ev)}> 
+              <img src={del} alt="" />.
+              </button>
+              <Link to={`/update/${item.id}`}>
               <img src={edit} alt="" />.
-              </button>
-              <button >
-              <img src={del} alt="" />
-              </button>
+              </Link>
               </div>
           </li>
         ))}

@@ -1,5 +1,5 @@
 import Footer from "../../components/Footer/Footer";
-import "./form.css";
+import "./update.css";
 import Input from "../../components/inputs/inputs";
 import axios from 'axios'
 import React,{useState, useEffect} from "react";
@@ -8,7 +8,24 @@ import { useParams } from 'react-router-dom'
 
 
 
-function Form() {
+function Update() {
+
+const { id } = useParams();
+// console.log(id)
+
+const [User, setUser] = useState([]);
+  useEffect(() => {
+    axios.get(`http://localhost:5000/update/${id}`)
+        .then((response) => {
+            setUser(response.data)
+        })
+}, [])
+
+const nome = User.name
+// console.log(User.name)
+
+// csrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+
 
   const navigate = useNavigate();
   const [titulo, setName] = useState()
@@ -33,22 +50,25 @@ function Form() {
     setProduct(ev.target.value)
   }
   
-  const post = () => {
-    axios.post('http://localhost:5000/contact-us/',{
+  const put = () => {
+    axios.put(`http://localhost:5000/update/${id}`,{
       "name": titulo,
       "email": email,
       "product": product
     },)
-    .then(navigate("/send"))
+    // .then(navigate("/send"))
     }
+
+    // console.log(product)
+    // console.log(titulo)
 
 
     return (
       <div id="page">
-        <form id="form" onSubmit={post} >
+        <form id="form" onSubmit={put} >
         <h1 id="h1-form">Contact Us!</h1>
-        <Input type="text" id="name" description="Name: " placeholder="Insert your name" name="name" funcao={changeName}/>
-          <Input type="email" id="email" description="E-mail: " placeholder="Insert your e-mail" name="email" funcao={changeEmail}/>
+        <Input type="text" id="name" description="Name: " placeholder="Insert your name" name="name" funcao={changeName} />
+          <Input type="email" id="email" description="E-mail: " placeholder="Insert your e-mail" name="email" funcao={changeEmail} />
         <h2 id="h2-form">
           Whitch one is your favorite?
         </h2>
@@ -64,4 +84,4 @@ function Form() {
     );
   }
   
-  export default Form;
+  export default Update;
