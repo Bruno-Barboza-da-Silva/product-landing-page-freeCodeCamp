@@ -12,7 +12,18 @@ const managerController = {
           );
           console.log(clients)
           response.json(clients)
-    }
+    },
+    update: async(request, response) => {},
+    delete: async(request, response) => {
+      const { id } = request.params;
+      console.log(id)
+    
+      await ClientsModel.destroy({
+        where: {
+          id
+        },})
+    },
 }
 
 module.exports = managerController; 
+
