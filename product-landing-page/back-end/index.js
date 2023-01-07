@@ -9,32 +9,16 @@ const cors = require('cors')
 const app = express();
 const contactRouter = require('./routes/contactUs.router')
 const sendRouter = require("./routes/send.router")
-
-
+const managerRouter = require("./routes/manager.router")
 
 app.use(express.json());
 app.use(cors())
-
-
-let json = []
-
-app.get('/all-clients', (req, res) => {
-    res.json(json)
-})
-
-// app.post('/contact-us', (req, res) => {
-//     console.log(req.body)
-//     json.push(req.body)
-    
-// })
-
-
-
 
 app.use("/contact-us", contactRouter);
 
 app.use("/send", sendRouter);
 
+app.use('/manager', managerRouter);
 
 app.listen(5000, ()=>{
     console.log("aplicação rodando na porta 5000")

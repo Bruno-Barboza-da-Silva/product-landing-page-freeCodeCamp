@@ -11,7 +11,7 @@ function Send() {
       // console.log(res.data[0].name)
       setFrase(res.data[0].name)});
   }, [frase])
-
+  console.log(frase)
     return (
       <div className="message">
         <h1 id="message-h1">Your message was sent! </h1>
