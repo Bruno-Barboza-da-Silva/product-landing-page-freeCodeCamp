@@ -20,42 +20,56 @@ function Manager() {
     console.log(number)
     axios.delete(`http://localhost:5000/manager/${number}`).then(window.location.reload())
   }
+  const convertDate = (item) => {
+    let data = String(item).split("T")[0].split("-").reverse().join("-")
+    let hour = String(item).split("T")[1].split(".")[0]
+    let date = data + " " + hour
+    
+    console.log(date)
+
+    return date
+  }
+
 
   return (
     <div className="manager">
-      <Link to="/contact-us">
-      <img src={add} alt="" />
-      </Link>
       <ul className="manager">
       <li>
             <div>Name</div>
             <div>E-mail</div>
             <div>Product</div>
             <div>Created at</div>
-            <div>Updated At</div>
-            <div>Buttons</div>
+            <div>Updated at</div>
           </li>
         {User.map((item) => (
           <li key={item.id}>
             <div>{item.name}</div>
             <div>{item.email}</div>
+            <div className="fix-content">
             <div>{item.product}</div>
-            <div>{item.createdAt}</div>
-            <div>{item.updatedAt}</div>
+            <div>{convertDate(item.createdAt)}</div>
+            <div>{convertDate(item.updatedAt)}</div>
             <div className="buttons-manager">              
               <button id={item.id} onClick={(ev) => destroy(ev)}> 
-              <img src={del} alt="" />.
+              <img src={del} alt="delete" id="del"/>
               </button>
               <Link to={`/update/${item.id}`}>
-              <img src={edit} alt="" />.
+              <img src={edit} alt="update" id="update" />
               </Link>
+              </div>
               </div>
           </li>
         ))}
       </ul>
+      <div id="links-container">
+      <Link to="/contact-us">
+      <img src={add} alt="" id='add'/>
+      </Link>
       <Link to="/"  id="message-a">
         Return
       </Link>
+      </div>
+
     </div>
   );
 }

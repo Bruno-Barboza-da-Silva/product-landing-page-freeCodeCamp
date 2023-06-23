@@ -16,3 +16,43 @@
     padding: 1rem;
     font-size: 1rem;
 }
+
+#add {
+    width: 100px;
+}
+
+.buttons-manager {
+    width: 50px;
+    display: flex;
+}
+
+
+
+#del{
+    color: white;
+    width: 50px;
+}
+
+#update {
+    width: 50px;
+}
+
+#links-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#links-container a {
+    margin: 0
+}
+
+#links-container #add:hover  {
+    background-color: white;
+}
+
+.fix-content {
+    background-color: aqua;
+    display: flex;
+}
