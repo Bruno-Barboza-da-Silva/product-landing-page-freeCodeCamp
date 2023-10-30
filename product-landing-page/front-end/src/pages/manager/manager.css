@@ -1,6 +1,8 @@
 .manager {
     background-color: black;
     height: 100vh;
+    margin-top: 50px;
+    padding: 0;
 }
 
 .manager ul{
@@ -17,24 +19,40 @@
     font-size: 1rem;
 }
 
+.manager ul li div {
+    width: calc(100% / 6);
+    text-align: center;
+}
+
+
+
 #add {
     width: 100px;
 }
 
 .buttons-manager {
-    width: 50px;
+    width: 30px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 
 
 #del{
     color: white;
-    width: 50px;
+    width: 30px;
 }
 
-#update {
+.buttons-manager button:hover, #a-update:hover, #add:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+#a-update {
     width: 50px;
+    border-radius: 10px;
 }
 
 #links-container {
@@ -42,17 +60,16 @@
     display: flex;
     align-items: center;
     justify-content: end;
+    margin-top: 70px;
 }
 
 #links-container a {
     margin: 0
 }
 
-#links-container #add:hover  {
-    background-color: white;
-}
 
-.fix-content {
-    background-color: aqua;
-    display: flex;
+
+.title-manager {
+    color: white;
+    background-color: black;
 }
