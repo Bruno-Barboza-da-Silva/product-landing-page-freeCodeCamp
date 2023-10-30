@@ -35,17 +35,18 @@ function Manager() {
     <div className="manager">
       <ul className="manager">
       <li>
-            <div>Name</div>
-            <div>E-mail</div>
-            <div>Product</div>
-            <div>Created at</div>
-            <div>Updated at</div>
+            <div className="title-manager">Name</div>
+            <div className="title-manager">E-mail</div>
+            <div className="title-manager">Product</div>
+            <div className="title-manager">Created at</div>
+            <div className="title-manager">Updated at</div>
+            <div className="title-manager">Action</div>
           </li>
         {User.map((item) => (
           <li key={item.id}>
             <div>{item.name}</div>
             <div>{item.email}</div>
-            <div className="fix-content">
+
             <div>{item.product}</div>
             <div>{convertDate(item.createdAt)}</div>
             <div>{convertDate(item.updatedAt)}</div>
@@ -57,7 +58,7 @@ function Manager() {
               <img src={edit} alt="update" id="update" />
               </Link>
               </div>
-              </div>
+
           </li>
         ))}
       </ul>
