@@ -54,7 +54,7 @@ function Manager() {
               <button id={item.id} onClick={(ev) => destroy(ev)}> 
               <img src={del} alt="delete" id="del"/>
               </button>
-              <Link to={`/update/${item.id}`}>
+              <Link id="a-update"to={`/update/${item.id}`}>
               <img src={edit} alt="update" id="update" />
               </Link>
               </div>
